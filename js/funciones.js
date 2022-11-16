@@ -24,12 +24,12 @@ function agregarFormularioEditar(datos){  //agrega el valor de la fila a los inp
     $('#nombreUsuario').val(d[1]);
     $('#rolUsuario').val(d[2]);  
 }
-function agregarFormularioEditarAdmin(idrol, superadmin){   //agrega el valor de la fila a los input para editar
+function agregarFormularioEditarAdmin(id, superadmin){   //agrega el valor de la fila a los input para editar
     //var datos = JSON.parse(datos);
 
-    console.log('desde funcion '+idrol, superadmin);
+    console.log('desde funcion '+id, superadmin);
 
-    var cadena = {"idrol" : idrol, "superadmin" : superadmin, "opcion" : 'cargarmodal' }
+    var cadena = {"id" : id, "superadmin" : superadmin, "opcion" : 'cargarmodal' }
     $.ajax({
         type: "POST",
         url: "consultas.php",
@@ -37,7 +37,7 @@ function agregarFormularioEditarAdmin(idrol, superadmin){   //agrega el valor de
         success:function(data){
             //console.log(data);
             var dataparseado = JSON.parse(data);
-            $('#idadmin').val(dataparseado.result[0]['idrol'] );
+            $('#idadmin').val(dataparseado.result[0]['id'] );
             $('#nombreAdmin').val(dataparseado.result[0]['nombreAdmin'] );
 
             //asignar check correcto de super admin

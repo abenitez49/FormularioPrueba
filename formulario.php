@@ -29,9 +29,9 @@ $row = mysqli_fetch_array($query);
         <div class="class row"></div>
           <div class="class col-md-4">
               <form action="insertar.php" id="datosInput" method ="POST">
-              <h1>Formulario Prueba</h1>
               <h2>Bienvenido: <?php echo $_SESSION['nombreUsuario'] ?> <br> </h2>
               <input hidden='' id='idusuariologueado' value="<?php echo $_SESSION['idusuariologueado'] ?>"> </input>
+              <p>Crear nuevo usuario</p>
               <label>Nombre:</label>
               <input type="text" name="nombre" id="nombre" class="form-control input-sm">
               <label>rol:</label>
